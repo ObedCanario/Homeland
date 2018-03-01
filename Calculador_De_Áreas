@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+#define _USE_MATH_DEFINES
+#include <math.h>
+using namespace std;
+
+void areadeltriangulo()
+{
+	float base;
+	cout << "\n Cual es su base de su triangulo? ";
+	cin >> base;
+	float altura;
+	cout << "Cual es su altura de su triangulo? ";
+	cin >> altura;
+	cout << "El area de su triangulo es " << 0.5*(base*altura) <<endl << endl ;
+}
+
+void areadeltrapecio()
+{
+	float basemenor;
+	cout << "\n Cual es su base menor de su trapecio? ";
+	cin >> basemenor;
+	float basemayor;
+	cout << "Cual es su base mayor de su trapecio? ";
+	cin >> basemayor;
+	float alturatrapecio;
+	cout << "Cual es la altura de su trapecio? ";
+	cin >> alturatrapecio;
+	cout << "El area de su trapecio es " << (((basemenor+basemayor)*0.5)*alturatrapecio) <<endl << endl;
+}
+
+void volumendelcono()
+{
+	float radiocirculo;
+	cout << "\n Cual es el radio del circulo base de su cono? ";
+	cin >> radiocirculo;
+	float alturacono;
+	cout << "Cual es la altura de su cono? ";
+	cin >> alturacono;
+	cout << "El volumen de su cono es " << (alturacono*((M_PI*(pow(radiocirculo,2)))/3)) <<endl << endl;
+}
+
+void volumendelcilindro()
+{
+	float radiocirculocilindro;
+	cout << "\n Cual es el radio del circulo de su cilindro? ";
+	cin >> radiocirculocilindro;
+	float alturacilindro;
+	cout << "Cual es la altura de su cilindro? ";
+	cin >> alturacilindro;
+	cout << "El volumen de su cilindro es " << (alturacilindro*M_PI*(pow(radiocirculocilindro,2))) <<endl << endl;
+}
+
+int main()
+{
+	char x;
+do
+{
+	cout << "Introduzca que quiere calcular \n 1) Area del triangulo \n 2) Area del trapecio \n 3) Volumen del cono \n 4) Volumen del cilindro \n 5) Salir " << endl << endl;
+	cin >> x;
+
+	switch (x)
+	{
+		
+		case '1': areadeltriangulo(); //Calculo de area de triangulo
+			break;
+
+		case '2': areadeltrapecio(); // Calculo del area del trapecio
+			break;
+		
+		case '3': volumendelcono(); //Calculo del volumen del cono
+			break;
+		
+		case '4': volumendelcilindro(); // Calculo del volumen del cilindro
+			break;
+		
+		case '5':
+			cout << "\n Saliendo... " <<endl <<endl;
+			return 0;
+			
+		default:
+		cout<< "\n Error: Introduzca una opcion valida " <<endl <<endl;
+		break;
+	}
+}
+while (x != 5);
+}
